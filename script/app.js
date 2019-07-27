@@ -1,3 +1,11 @@
+const display = document.querySelector(".screen p");
+
+
+
+function clearDisplay(p){
+	p.innerHTML = "";
+}
+
 function add(num1, num2){
 	return num1 + num2;
 }
