@@ -1,7 +1,7 @@
 const display = document.querySelector(".screen p");
 let operationString = "";
 
-// event listener for numpad buttons
+// Event listener for numpad buttons
 const numpad = document.querySelectorAll(".number");
 numpad.forEach((button) => { 
 	button.addEventListener("click", (event) => {
@@ -11,7 +11,6 @@ numpad.forEach((button) => {
 	});
 });
 	
-
 // Event listener for all the operator buttons
 const operators = document.querySelectorAll(".operator");
 operators.forEach((button) => {
@@ -20,14 +19,10 @@ operators.forEach((button) => {
 	});
 });
 
-function clearDisplay(p){
-	p.innerHTML = "";
-	operationString = "";
-}
-
-
 function processOperators(event) {
 	let operator = event.target.dataset.operation;
+	// You could say that this is the "start" of the program
+	// Once "=" gets pressed, the logic kicks off
 	if(operator === "="){
 		let operationArray = operationString.split(" ");
 		
@@ -40,17 +35,15 @@ function processOperators(event) {
 	}
 }
 
-function checkOperator(tested){
-	if(tested === "+" || tested === "-" || tested === "*" || tested === "/"){
-		return true;
-	}
-}
-
 function solveExpression(operationArray){
 	
 	// If the array consists of only one value, it's done!
 	if(operationArray.length === 1){
-		return operationArray.toString();
+		if(!Number.isInteger(operationArray[0])){
+			return operationArray[0].toPrecision(3).toString();
+		} else {
+			return operationArray.toString();
+		}
 	}
 	for(let i = 0; i < operationArray.length; i++){
 		let current = operationArray[i]; 
@@ -58,7 +51,7 @@ function solveExpression(operationArray){
 		if(checkOperator(current)){
 			let operandA = Number(operationArray[i-1]);
 			let operandB = Number(operationArray[i+1]);
-			// for each case, solves operation, and creates new array
+			// for each case: solves operation and creates new array
 			// with the remainder of the chain, inserting result at [0]
 			// recurses afterwards
 			if(current === "+"){
@@ -77,6 +70,9 @@ function solveExpression(operationArray){
 				operated.unshift(result);
 				return solveExpression(operated);
 			} else if(current === "/") {
+				if(operandB === "0" || operandB === 0){
+					return "ಠ_ಠ  No  ";
+				}
 				let result = operate(operandA,operandB,divide);
 				let operated = operationArray.slice(i+2);
 				operated.unshift(result);
@@ -84,6 +80,17 @@ function solveExpression(operationArray){
 			}
 		}
 	}
+}
+
+function checkOperator(tested){
+	if(tested === "+" || tested === "-" || tested === "*" || tested === "/"){
+		return true;
+	}
+}
+
+function clearDisplay(p){
+	p.innerHTML = "";
+	operationString = "";
 }
 
 function add(num1, num2){
