@@ -20,6 +20,12 @@
   top: 50px;
   height: 400px;
   width: 300px;
+  background: #80d3ff;
+  background:-webkit-linear-gradient(top, #80d3ff, #63bded);
+  background:   -moz-linear-gradient(top, #80d3ff, #63bded);
+  background:    -ms-linear-gradient(top, #80d3ff, #63bded);
+  background:     -o-linear-gradient(top, #80d3ff, #63bded);
+  background:        linear-gradient(to bottom, #80d3ff, #63bded);
   background-color: #80d3ff;
   border: 5px solid #b3e5ff;
   border-radius: 10px;
