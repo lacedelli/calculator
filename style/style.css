@@ -1,0 +1,94 @@
+/*
+  Important tidbits
+
+  Calc bg #80d3ff
+  light border color #b3e5ff
+  button shadow #0087ce
+  button text color #5f5f5f
+  white-ish color #f6fcff
+  Courgette font by Karolina Lach - https://fonts.google.com/specimen/Courgette?selection.family=Courgette
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+/******************************
+        body styles
+******************************/
+
+.calculator{
+  height: 400px;
+  width: 300px;
+  background-color: #80d3ff;
+  border: 5px solid #b3e5ff;
+  border-radius: 10px;
+  
+}
+
+/******************************
+        display styles
+******************************/
+
+.display {
+  height: 130px;  
+}
+
+.display h1 {
+  color: #f6fcff;
+  text-align: center;
+  padding-top: 5px;
+  font-family: 'Courgette', cursive;
+  font-size: 1.5em;
+}
+
+/******************************
+        numpad styles
+******************************/
+
+.numbers {
+  float: left;
+  width: 66%;
+}
+
+.numbers button {
+  display: inline-block;
+  
+}
+
+.number {
+  width: 50px;
+  height: 50px;
+  margin-left: 6px;
+  margin-bottom: 9px;
+  background-color: #f6fcff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 3px #0087ce;
+  font-size: 1.3em;
+  color: #5f5f5f;
+}
+
+.number:last-child {
+  width: 172px;
+}
+
+.operators {
+  float: right;
+  width: 33%;
+}
+
+.operator {
+  width: 40px;
+  height: 80px;
+  margin-left: 2px;
+  margin-bottom: 9px;
+  background-color: #f6fcff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 3px #0087ce; 
+  font-size: 1.3em;
+  color: #5f5f5f;
+}
+
+.operator:last-child {
+  width: 87px;
+  height: 50px;
+}
