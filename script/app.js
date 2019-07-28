@@ -82,6 +82,16 @@ function solveExpression(operationArray){
 	}
 }
 
+function backspace(p){
+	operationString = operationString.slice(0, -1);
+	p.innerHtml = p.innerHTML.slice(0, -1);
+}
+
+function insertDot(p){
+	operationString += ".";
+	p.innerHTML += ".";
+}
+
 function checkOperator(tested){
 	if(tested === "+" || tested === "-" || tested === "*" || tested === "/"){
 		return true;
