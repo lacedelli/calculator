@@ -17,3 +17,5 @@ I had a lot of fun making this one, I thought it would be frustrating as all hel
 This is the project in which the concepts behind functional programming got through to me, there is a lot for me to master still of course, but I think that there was a breakthrough made for sure on this one.
 
 There are still some funky things on this one still that I don't really know how to deal with, but maybe in a half year I can come back and overhaul all this with more experience under my belt.
+
+27/June/2019
